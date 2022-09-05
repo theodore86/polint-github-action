@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -o noglob
 
+
 POLINT='/go/bin/po-lint'
 
 error() {
