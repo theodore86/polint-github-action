@@ -1,5 +1,5 @@
 FROM quay.io/coreos/po-tooling:release-0.48
-LABEL maintainer="t.georgomanolis@thebeat.co"
+LABEL maintainer="tgeorgomanolis@gmail.com"
 
 WORKDIR /app
 COPY entrypoint.sh .
