@@ -1,7 +1,7 @@
 ---
 name: 'Prometheus Operator (Lint) Github Action'
 description: 'Run po-lint (linting) against PrometheusRules CRDs'
-author: 'Theodore Georgomanolis'
+author: 'theodore86 <tgeorgomanolis@gmail.com>'
 inputs:
   path:
     description: 'Path to Prometheus operator rules'

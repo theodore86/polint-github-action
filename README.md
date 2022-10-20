@@ -6,6 +6,10 @@
 
 This simple GitHub Action allows to run [po-lint](https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/linting.md) on **any** kubernetes [prometheus operator](https://github.com/prometheus-operator/prometheus-operator) CRDs.
 
+## Success Criteria
+
+An exit code of ``0`` is considered a successful execution.
+
 ## Usage
 
 ```yaml
