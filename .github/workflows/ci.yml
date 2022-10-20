@@ -1,12 +1,13 @@
-name: Linting
+name: Continuous Integration
 on:
   pull_request:
     paths:
       - '**.sh'
       - 'Dockerfile'
+      - '**.y*ml'
 
 jobs:
-  checks:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.1.0
@@ -16,3 +17,14 @@ jobs:
         uses: hadolint/hadolint-action@v2.1.0
         with:
           dockerfile: ./Dockerfile
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.1.0
+      - name: Run Prometheus Operator action
+        uses: ./
+        with:
+          path: './tests'
+          exclude: '.*invalid.*'
+

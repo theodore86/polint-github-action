@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+    prometheus: k8s
+  name: prometheus-k8s-rules
+  namespace: monitoring
+spec:
+  groups:
+
+  - name: node.rules
+    rules:
+    - exp: sum(min(kube_pod_info) by (node))
+      record: ':kube_pod_info_node_count:'

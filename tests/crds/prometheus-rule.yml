@@ -1,0 +1,26 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+    prometheus: k8s
+  name: prometheus-k8s-rules
+  namespace: monitoring
+spec:
+  groups:
+
+  - name: node.rules
+    rules:
+    - expr: sum(min(kube_pod_info) by (node))
+      record: ':kube_pod_info_node_count:'
+
+  - name: kubernetes-absent
+    rules:
+    - alert: AlertmanagerDown
+      annotations:
+        message: Alertmanager has disappeared from Prometheus target discovery.
+        runbook_url: https://github.com/kubernetes-monitoring/kubernetes-mixin/tree/master/runbook.md#alert-name-alertmanagerdown
+      expr: |
+        absent(up{job="alertmanager-main",namespace="monitoring"} == 1)
+      for: 15m
+      labels:
+        severity: critical
