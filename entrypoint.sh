@@ -58,6 +58,7 @@ lint() {
   _command "$POLINT" || error "$POLINT linter not installed"
   local files
   files=$(_find "$path" "${glob_pattern}")
+  [[ -z $files ]] && error "No YAML files to lint in $path directory"
   info "Linting '${glob_pattern}' files in '${path}' directory"
   _check "$files" "$exclude"
 }
@@ -68,9 +69,9 @@ main() {
   local exclude="${3:-""}"
   [[ ! -d $path ]] && error "$path directory not found"
   if ! lint "$path" "${glob_pattern}" "$exclude"; then
-    error "Linting failed"
+      error "(PO)linting failed"
   fi
-  info "Linting succeded"
+  info "(PO)linting succeded"
 }
 
 main "$@"
