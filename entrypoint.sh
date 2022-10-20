@@ -58,7 +58,7 @@ lint() {
   _command "$POLINT" || error "$POLINT linter not installed"
   local files
   files=$(_find "$path" "${glob_pattern}")
-  [[ -z $files ]] && error "No YAML files to lint in $path directory"
+  [[ -z $files ]] && error "No PO CRDs found in '$path' directory"
   info "Linting '${glob_pattern}' files in '${path}' directory"
   _check "$files" "$exclude"
 }
