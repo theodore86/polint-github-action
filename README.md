@@ -3,9 +3,11 @@
 [![Linting](https://github.com/theodore86/prometheus-operator-github-action/actions/workflows/ci.yml/badge.svg)](https://github.com/theodore86/prometheus-operator-github-action/actions/workflows/ci.yml)
 
 ## Introduction
+
 This simple GitHub Action allows to run [po-lint](https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/linting.md) on **any** kubernetes [prometheus operator](https://github.com/prometheus-operator/prometheus-operator) CRDs.
 
 ## Usage
+
 ```yaml
 name: Check Prometheus Operator CRDs
 on:
@@ -27,6 +29,6 @@ jobs:
 
 | Name                 | Description                                                                                                                             | Default            |
 |----------------------|-----------------------------------------------------------------------------------------------------------------------------------------|--------------------|
-| `path`               | The path to the Dockerfile to be tested                                                                                                 | `./`               |
+| `path`               | Absolute or relative path to the Prometheus Operator CRDs                                                                                                 | `./`               |
 | `glob_pattern`       | Rule file extension as glob pattern                                                                                                     | `*.y*ml`           |
-| `exclude`            | Regex to exclude files or folders from linting                                                                                          | <none>             |
+| `exclude`            | Regex to exclude files or folders from linting                                                                                          | ``none``             |
