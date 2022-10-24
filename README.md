@@ -15,7 +15,7 @@ An exit code of ``0`` is considered a successful execution.
 ```yaml
 name: Check Prometheus Operator CRDs
 on:
-  pull_request:
+  pull_request: {}
 
 jobs:
   polint:
@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: theodore86/polint-github-action@v1
+      - uses: theodore86/polint-github-action@v2
         with:
           path: './crds'
           exclude: '.*test.*'
