@@ -1,6 +1,6 @@
-# Prometheus Operator GitHub Action
+# Prometheus Operator Linting GitHub Action
 
-[![Linting](https://github.com/theodore86/prometheus-operator-github-action/actions/workflows/ci.yml/badge.svg)](https://github.com/theodore86/prometheus-operator-github-action/actions/workflows/ci.yml)
+[![Linting](https://github.com/theodore86/polint-github-action/actions/workflows/ci.yml/badge.svg)](https://github.com/theodore86/polint-github-action/actions/workflows/ci.yml)
 
 ## Introduction
 
@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: theodore86/prometheus-operator-github-action@v1
+      - uses: theodore86/polint-github-action@v1
         with:
           path: './crds'
           exclude: '.*test.*'

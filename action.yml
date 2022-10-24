@@ -1,5 +1,5 @@
 ---
-name: 'Prometheus Operator (Lint) Github Action'
+name: 'Prometheus Operator Linting Github Action'
 description: 'Run po-lint (linting) against PrometheusRules CRDs'
 author: 'theodore86 <tgeorgomanolis@gmail.com>'
 inputs:
