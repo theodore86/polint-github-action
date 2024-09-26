@@ -10,7 +10,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.1.7
+      - uses: actions/checkout@v4.2.0
       - name: Run ShellCheck
         uses: ludeeus/action-shellcheck@2.0.0
       - name: Run Hadolint
@@ -21,7 +21,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.1.7
+      - uses: actions/checkout@v4.2.0
       - name: Run Prometheus Operator action
         uses: ./
         with:
